@@ -18,6 +18,18 @@ import android.webkit.WebViewClient;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public class myWebview extends WebView {
+
+        private String myWebView;
+
+        public String getmyWebView() {
+            return myWebView;
+        }
+
+        public void setWebView(String WebView) {
+            this.myWebView = WebView;
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);1
         myWebView.setWebViewClient(new WebViewClient());
     }
 
