@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        myWebView.setWebViewClient(new WebViewClient());
     }
 
     @Override
@@ -89,11 +91,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             myWebView.loadUrl("http://www.techhive.com");
         } else if (id == R.id.nav_slideshow) {
-
+            myWebView.loadUrl("http://www.macworld.com");
         } else if (id == R.id.nav_manage) {
-
+            myWebView.loadUrl("http://www.greenbot.com");
         } else if (id == R.id.nav_share) {
-
+            myWebView.loadUrl("http://www.imore.com/pixel-project-comic");
         } else if (id == R.id.nav_send) {
 
         }
