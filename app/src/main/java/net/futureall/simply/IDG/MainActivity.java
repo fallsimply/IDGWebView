@@ -17,33 +17,20 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    public class myWebview extends WebView {
-
-        private String myWebView;
-
-        public String getmyWebView() {
-            return myWebView;
-        }
-
-        public void setWebView(String WebView) {
-            this.myWebView = WebView;
-        }
-    }
-    @Override
+}
+    @Override;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final WebView myWebView = (WebView) findViewById(R.id.webview);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Page Refreshed", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                        myWebView.reload();
+                        WebView.myWebView.reload();
             }
         });
 
@@ -54,12 +41,13 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);1
+        navigationView.setNavigationItemSelectedListener(this);
         myWebView.setWebViewClient(new WebViewClient());
     }
 
     @Override
     public void onBackPressed() {
+        WebView myWebView = (WebView) findViewById(R.id.webview);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -93,7 +81,6 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        WebView myWebView = (WebView) findViewById(R.id.webview);
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
