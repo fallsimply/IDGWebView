@@ -17,8 +17,13 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+<<<<<<< HEAD
 }
     @Override;
+=======
+
+    @Override
+>>>>>>> parent of 51778c8... Added WebView Public variable
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
